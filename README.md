@@ -1,5 +1,7 @@
 # Kiro Expert
 
+[中文文档](README_CN.md)
+
 Expert assistant for Kiro documentation queries. Searches official Kiro docs using AI-powered semantic search and provides accurate answers with source citations.
 
 ## Installation
