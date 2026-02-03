@@ -55,6 +55,43 @@ cp "$POWER_SOURCE_DIR/mcp.json" "$LOCAL_REPO_DIR/mcp.json"
 echo -e "${BLUE}Installing agent configuration...${NC}"
 cp "$REPO_CLONE_DIR/.kiro/agents/kiro-expert.json" "$AGENT_DIR/kiro-expert.json"
 
+# Merge MCP configuration
+echo -e "${BLUE}Merging MCP configuration...${NC}"
+MCP_SETTINGS_DIR="$HOME/.kiro/settings"
+MCP_SETTINGS_FILE="$MCP_SETTINGS_DIR/mcp.json"
+mkdir -p "$MCP_SETTINGS_DIR"
+
+python3 << 'MCPEOF'
+import json
+import os
+
+mcp_file = os.path.expanduser("~/.kiro/settings/mcp.json")
+
+# Read existing config or create empty structure
+try:
+    with open(mcp_file, 'r') as f:
+        config = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    config = {}
+
+# Ensure powers.mcpServers structure exists
+if "powers" not in config:
+    config["powers"] = {}
+if "mcpServers" not in config["powers"]:
+    config["powers"]["mcpServers"] = {}
+
+# Add kiro-expert MCP server (only if not already present)
+config["powers"]["mcpServers"]["power-kiro-expert-kiro-docs"] = {
+    "url": "https://3dadkh5phm.ap-northeast-1.awsapprunner.com/mcp"
+}
+
+# Write back
+with open(mcp_file, 'w') as f:
+    json.dump(config, f, indent=2)
+
+print("MCP configuration merged successfully")
+MCPEOF
+
 # Parse POWER.md frontmatter
 echo -e "${BLUE}Updating registry...${NC}"
 
@@ -174,3 +211,4 @@ echo "  • Repository: $REPO_CLONE_DIR"
 echo "  • Local cache: $LOCAL_REPO_DIR"
 echo "  • Agent: $AGENT_DIR/kiro-expert.json"
 echo "  • Registry: $REGISTRY_FILE"
+echo "  • MCP config: $MCP_SETTINGS_FILE"
