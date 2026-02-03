@@ -4,6 +4,7 @@ version: "0.1.0"
 displayName: "Kiro Expert"
 description: "Expert assistant for Kiro documentation queries. Searches official Kiro docs and provides accurate answers with source citations."
 keywords: ["kiro", "documentation", "docs", "expert", "search"]
+author: "yytdfc"
 ---
 
 # Kiro Expert
