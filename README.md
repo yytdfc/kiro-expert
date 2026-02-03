@@ -4,43 +4,37 @@ Expert assistant for Kiro documentation queries. Searches official Kiro docs usi
 
 ## Installation
 
-### Method 1: Via GitHub Repository (Power for Kiro IDE)
+One-line installation:
 
-1. Open Kiro IDE
-2. Open Powers panel (Command Palette → "Open Kiro Powers")
-3. Click "Add Custom Power"
-4. Select "GitHub Repository"
-5. Enter: `https://github.com/yytdfc/kiro-expert`
-6. Click "Add"
+```bash
+curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/install.sh | bash
+```
 
-### Method 2: Local Directory (Power for Kiro IDE)
+This will install:
+- Power to `~/.kiro/powers/installed/kiro-expert/`
+- Agent configuration to `~/.kiro/agents/kiro-expert.json`
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yytdfc/kiro-expert.git
-   ```
-2. Open Kiro IDE
-3. Open Powers panel
-4. Click "Add Custom Power"
-5. Select "Local Directory"
-6. Browse to the cloned `kiro-expert` directory
-7. Click "Add"
+### Manual Installation (for developers)
 
-### Method 3: Sub-Agent Configuration (Kiro CLI)
+If you want to customize or debug:
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/yytdfc/kiro-expert.git
    ```
 
-2. Copy the agent configuration to your workspace:
-   ```bash
-   cp kiro-expert/.kiro/agents/kiro-expert.json .kiro/agents/
-   ```
+2. Install power from local folder:
+   - Open Kiro IDE
+   - Open Powers panel (Command Palette → "Open Kiro Powers")
+   - Click "Add Custom Power"
+   - Select "Local Directory"
+   - Browse to `kiro-expert/kiro-expert-power/` directory
+   - Click "Add"
 
-3. Use the agent:
+3. Copy agent configuration:
    ```bash
-   kiro chat --agent kiro-expert
+   mkdir -p ~/.kiro/agents
+   cp kiro-expert/.kiro/agents/kiro-expert.json ~/.kiro/agents/
    ```
 
 ## Usage
@@ -48,6 +42,14 @@ Expert assistant for Kiro documentation queries. Searches official Kiro docs usi
 Once installed, the Kiro Expert power will help you search Kiro documentation and get accurate answers with source citations.
 
 Simply ask questions about Kiro naturally, and the agent will search the documentation and provide accurate answers.
+
+**For Kiro IDE:**
+- The power is automatically available in your Powers panel
+
+**For Kiro CLI:**
+```bash
+kiro chat --agent kiro-expert
+```
 
 ## Requirements
 
