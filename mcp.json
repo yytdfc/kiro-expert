@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "kiro-docs": {
+      "url": "https://3dadkh5phm.ap-northeast-1.awsapprunner.com/mcp"
+    }
+  }
+}
