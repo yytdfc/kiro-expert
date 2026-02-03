@@ -29,6 +29,9 @@ Include in the issue:
 - Steps already tried
 - Error messages (if any)
 
+**MCP Server:** `kiro-docs` (Remote)
+**No configuration needed** - works immediately after installation
+
 ## Kiro Background
 
 **Product Overview:**
@@ -65,7 +68,3 @@ Kiro is an agentic AI development tool built by AWS, available as both an IDE an
 
 7. **Auto Mode**: Uses mix of frontier models for optimal quality, latency, and cost
 
----
-
-**MCP Server:** `kiro-docs` (Remote)
-**No configuration needed** - works immediately after installation
