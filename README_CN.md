@@ -53,6 +53,16 @@ curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/install.sh 
 kiro chat --agent kiro-expert
 ```
 
+## 示例
+
+**在 Kiro IDE 中使用 Power：**
+
+![Power 示例](assets/example-power.webp)
+
+**在 Kiro CLI 中使用 Agent：**
+
+![CLI Agent 示例](assets/example-cliagent.webp)
+
 ## 依赖
 
 - Kiro IDE 或 CLI

@@ -53,6 +53,16 @@ Simply ask questions about Kiro naturally, and the agent will search the documen
 kiro chat --agent kiro-expert
 ```
 
+## Examples
+
+**Using Power in Kiro IDE:**
+
+![Power Example](assets/example-power.webp)
+
+**Using Agent in Kiro CLI:**
+
+![CLI Agent Example](assets/example-cliagent.webp)
+
 ## Requirements
 
 - Kiro IDE or CLI
