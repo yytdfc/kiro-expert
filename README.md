@@ -16,6 +16,14 @@ This will install:
 - Power to `~/.kiro/powers/installed/kiro-expert/`
 - Agent configuration to `~/.kiro/agents/kiro-expert.json`
 
+### Kiro CLI Installation (no clone needed)
+
+```bash
+mkdir -p ~/.kiro/agents
+curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/.kiro/agents/kiro-expert.json -o ~/.kiro/agents/kiro-expert.json
+kiro-cli chat --agent kiro-expert
+```
+
 ### Manual Installation (for developers)
 
 If you want to customize or debug:
@@ -50,7 +58,7 @@ Simply ask questions about Kiro naturally, and the agent will search the documen
 
 **For Kiro CLI:**
 ```bash
-kiro chat --agent kiro-expert
+kiro-cli chat --agent kiro-expert
 ```
 
 ## Examples

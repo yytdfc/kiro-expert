@@ -16,6 +16,14 @@ curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/install.sh 
 - Power 文件：`~/.kiro/powers/installed/kiro-expert/`
 - Agent 配置：`~/.kiro/agents/kiro-expert.json`
 
+### Kiro CLI 安装（无需克隆）
+
+```bash
+mkdir -p ~/.kiro/agents
+curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/.kiro/agents/kiro-expert.json -o ~/.kiro/agents/kiro-expert.json
+kiro-cli chat --agent kiro-expert
+```
+
 ### 手动安装（开发者）
 
 如需自定义或调试：
@@ -50,7 +58,7 @@ curl -fsSL https://raw.githubusercontent.com/yytdfc/kiro-expert/main/install.sh 
 
 **Kiro CLI：**
 ```bash
-kiro chat --agent kiro-expert
+kiro-cli chat --agent kiro-expert
 ```
 
 ## 示例
